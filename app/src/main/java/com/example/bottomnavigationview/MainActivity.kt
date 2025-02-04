@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         val navigation: BottomNavigationView = findViewById(R.id.navigation)
         navigation.setOnItemSelectedListener(mOnNavigationItemSelectedListener)
+        // Добавляем начальный фрагмент
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment.newInstance())
+        }
     }
 
     private fun loadFragment(fragment: Fragment) {
